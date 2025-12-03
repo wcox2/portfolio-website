@@ -443,7 +443,7 @@ const Portfolio = () => {
                 </a>
 
                 <a 
-                  href="linkedin.com/in/william-cox-5a2b32185" 
+                  href="https://linkedin.com/in/william-cox-5a2b32185" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
@@ -455,7 +455,7 @@ const Portfolio = () => {
                 </a>
 
                 <a 
-                  href="x.com/cwidev" 
+                  href="https://x.com/cwidev" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
@@ -467,7 +467,7 @@ const Portfolio = () => {
                 </a>
 
                 <a 
-                  href="instagram.com/wcox2" 
+                  href="https://instagram.com/wcox2" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
