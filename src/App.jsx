@@ -42,7 +42,7 @@ const Portfolio = () => {
     
     const subject = encodeURIComponent(`Portfolio Contact: ${formData.name}`);
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `${formData.message}`
     );
     
     window.location.href = `mailto:willchriscox2@gmail.com?subject=${subject}&body=${body}`;
