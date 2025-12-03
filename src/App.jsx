@@ -4,6 +4,11 @@ import { Github, Linkedin, Mail, ExternalLink, FileText, Code, Twitter, X, Insta
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState({});
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,6 +28,28 @@ const Portfolio = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const subject = encodeURIComponent(`Portfolio Contact: ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:willchriscox2@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Reset form after opening email client
+    setFormData({ name: '', email: '', message: '' });
+  };
 
   const projects = [
     {
@@ -457,12 +484,16 @@ const Portfolio = () => {
               <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Send a Message
               </h3>
-              <div className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm mb-2 tracking-wide">Name</label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 bg-white text-gray-900 border border-gray-300 focus:border-black focus:outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -470,22 +501,33 @@ const Portfolio = () => {
                   <label className="block text-sm mb-2 tracking-wide">Email</label>
                   <input 
                     type="email" 
-                    className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 bg-white text-gray-900 border border-gray-300 focus:border-black focus:outline-none transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 <div>
                   <label className="block text-sm mb-2 tracking-wide">Message</label>
                   <textarea 
-                    className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors resize-none"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 bg-white text-gray-900 border border-gray-300 focus:border-black focus:outline-none transition-colors resize-none"
                     rows="6"
                     placeholder="Your message..."
                   />
                 </div>
-                <button className="w-full px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-300 text-sm tracking-wider">
+                <button 
+                  type="submit"
+                  className="w-full px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-300 text-sm tracking-wider"
+                >
                   SEND MESSAGE
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
