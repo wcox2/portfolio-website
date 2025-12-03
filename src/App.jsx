@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, FileText, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, FileText, Code, Twitter, X, Instagram } from 'lucide-react';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -27,31 +27,27 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Project Alpha",
-      description: "Coming soon - An innovative solution currently in development. This space will showcase cutting-edge technology and creative problem-solving.",
-      tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-      status: "In Progress"
+      title: "Flick Finder",
+      description: "Led a 4-person Scrum team as Product Owner and developer for a personalized movie recommendation web app. Designed and implemented a full-stack application integrating a content-based ML model with a responsive ReactJS frontend and Flask backend. Trained and deployed a recommendation engine on a dataset of 45,000 movies to deliver tailored suggestions to users.",
+      tech: ["Python/Flask", "ReactJS", "MySQL", "Scikit-learn", "NumPy", "Pandas", "Bootstrap"],
+      status: "Completed",
+      date: "Feb 2024 - May 2024"
     },
     {
       id: 2,
-      title: "Project Beta",
-      description: "Coming soon - A transformative application being carefully crafted. Stay tuned for updates on this exciting venture.",
-      tech: ["Python", "TensorFlow", "Docker", "MongoDB"],
-      status: "In Progress"
+      title: "UFC Bout Predictor",
+      description: "Engineered and evaluated multiple ML models (KNN, SVM, Random Forest) to predict UFC fight outcomes with over 70% accuracy. Scraped and preprocessed structured data from UFCstats.com to build a robust training dataset. Presented findings at the Verna Miller Case Symposium, demonstrating effective model interpretation and data storytelling.",
+      tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Git"],
+      status: "Completed",
+      date: "March 2023 - May 2023"
     },
     {
       id: 3,
-      title: "Project Gamma",
-      description: "Coming soon - An ambitious project in early stages. More details will be revealed as development progresses.",
-      tech: ["TypeScript", "Next.js", "GraphQL", "Redis"],
-      status: "In Progress"
-    },
-    {
-      id: 4,
-      title: "Project Delta",
-      description: "Coming soon - A game-changing initiative under active development. Watch this space for exciting announcements.",
-      tech: ["Vue.js", "Django", "Kubernetes", "MySQL"],
-      status: "In Progress"
+      title: "Mind Madness",
+      description: "Designed and implemented core gameplay mechanics including player movement, puzzle interactions, and physics-based challenges in Unity using C#. Developed a modular architecture using object-oriented programming to support reusable puzzle components and scalable level design.",
+      tech: ["Unity", "C#", "Figma", "Git"],
+      status: "Completed",
+      date: "March 2023 - May 2023"
     }
   ];
 
@@ -62,7 +58,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <a href="#home" className="text-2xl font-bold tracking-tight">
-              Portfolio
+              WC
             </a>
             <div className="flex gap-8">
               <a href="#projects" className="text-sm hover:text-gray-600 transition-colors">
@@ -91,7 +87,7 @@ const Portfolio = () => {
                   animation: 'slideUp 0.8s ease-out'
                 }}
               >
-                Your Name
+                William Cox
               </h1>
             </div>
             <div className="overflow-hidden">
@@ -102,7 +98,7 @@ const Portfolio = () => {
                   animation: 'slideUp 0.8s ease-out 0.2s backwards'
                 }}
               >
-                Software Developer & Creative Technologist
+                Software Engineer
               </p>
             </div>
             <div 
@@ -161,9 +157,16 @@ const Portfolio = () => {
                   <div className="w-12 h-12 bg-black text-white flex items-center justify-center text-sm font-bold">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-                  <span className="text-xs px-3 py-1 bg-gray-100 text-gray-600 tracking-wider">
-                    {project.status}
-                  </span>
+                  <div className="flex flex-col items-end gap-2">
+                    <span className="text-xs px-3 py-1 bg-gray-100 text-gray-600 tracking-wider">
+                      {project.status}
+                    </span>
+                    {project.date && (
+                      <span className="text-xs text-gray-500">
+                        {project.date}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <h3 
@@ -237,14 +240,32 @@ const Portfolio = () => {
                   <div className="absolute -left-[41px] w-4 h-4 bg-black rounded-full" />
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <h4 className="text-xl font-bold">Position Title</h4>
-                      <p className="text-gray-600">Company Name</p>
+                      <h4 className="text-xl font-bold">Software Engineer</h4>
+                      <p className="text-gray-600">Wells Fargo</p>
+                      <p className="text-sm text-gray-500">Dallas, TX</p>
                     </div>
-                    <span className="text-sm text-gray-500">Year - Year</span>
+                    <span className="text-sm text-gray-500">July 2024 - Present</span>
                   </div>
-                  <p className="text-gray-600 mt-2 leading-relaxed">
-                    Experience details will be added here. Currently updating this section with relevant work history and accomplishments.
-                  </p>
+                  <ul className="text-gray-600 mt-3 leading-relaxed space-y-2 list-disc list-inside">
+                    <li>Led implementation of Cloud 9 voice recording infrastructure, integrating with Verba legacy system via custom API connections, data imports, and extension-to-metadata mapping—onboarded 400 regulated users and enabled compliance for 100,000 daily calls.</li>
+                    <li>Automated 8 voice recording compliance controls with Python and Selenium, ensuring adherence for 1,000+ regulated users and reducing manual oversight by 20 hours weekly.</li>
+                  </ul>
+                </div>
+                <div className="relative">
+                  <div className="absolute -left-[41px] w-4 h-4 bg-black rounded-full" />
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-xl font-bold">Software Engineering Intern</h4>
+                      <p className="text-gray-600">Wells Fargo</p>
+                      <p className="text-sm text-gray-500">Charlotte, NC</p>
+                    </div>
+                    <span className="text-sm text-gray-500">June 2022 - August 2023</span>
+                  </div>
+                  <ul className="text-gray-600 mt-3 leading-relaxed space-y-2 list-disc list-inside">
+                    <li>Worked in an Agile team to develop and maintain a full stack application to replace an outdated and manual process of completing Service Requests.</li>
+                    <li>Improved customer experience by reducing completion time for Service Requests by 75%.</li>
+                    <li>Worked with Java, Javascript, HTML, CSS, and Mendix.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -257,11 +278,34 @@ const Portfolio = () => {
                   <div className="absolute -left-[41px] w-4 h-4 bg-black rounded-full" />
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <h4 className="text-xl font-bold">Degree Name</h4>
-                      <p className="text-gray-600">University Name</p>
+                      <h4 className="text-xl font-bold">Bachelor of Science in Computer Science</h4>
+                      <p className="text-gray-600">Davidson College</p>
+                      <p className="text-sm text-gray-500">Davidson, NC</p>
                     </div>
-                    <span className="text-sm text-gray-500">Year</span>
+                    <span className="text-sm text-gray-500">Aug. 2020 - May 2024</span>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Athletics */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8 tracking-wide">Intercollegiate Athletics</h3>
+              <div className="space-y-8 pl-8 border-l-2 border-gray-200">
+                <div className="relative">
+                  <div className="absolute -left-[41px] w-4 h-4 bg-black rounded-full" />
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-xl font-bold">Davidson College Football</h4>
+                      <p className="text-gray-600">NCAA Division 1 Scholar-Athlete</p>
+                      <p className="text-sm text-gray-500">Charlotte, NC</p>
+                    </div>
+                    <span className="text-sm text-gray-500">August 2020 - December 2023</span>
+                  </div>
+                  <ul className="text-gray-600 mt-3 leading-relaxed space-y-2 list-disc list-inside">
+                    <li>Committed 30+ hours weekly to team activities throughout the year, including practice, weights, film study, travel, and competition, in addition to a full-time course load.</li>
+                    <li>Utilized film, statistics, and analytical data to study opponents prior to competitions, as well as during competitions to make real-time adjustments.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -269,11 +313,11 @@ const Portfolio = () => {
             {/* Skills */}
             <div>
               <h3 className="text-2xl font-bold mb-8 tracking-wide">Skills & Technologies</h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Languages</h4>
+                  <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Languages/Frameworks</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['JavaScript', 'Python', 'TypeScript'].map((skill) => (
+                    {['Java', 'Python/Flask', 'C#', 'JavaScript/React', 'HTML', 'CSS', 'R', 'MySQL'].map((skill) => (
                       <span key={skill} className="text-sm px-3 py-1 bg-gray-100 text-gray-700">
                         {skill}
                       </span>
@@ -281,9 +325,9 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Frameworks</h4>
+                  <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Developer Tools</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['React', 'Node.js', 'Django'].map((skill) => (
+                    {['Git', 'VS Code', 'Visual Studio', 'PyCharm', 'IntelliJ', 'Eclipse', 'Mendix', 'Unity Engine', 'DBeaver', 'MS 365'].map((skill) => (
                       <span key={skill} className="text-sm px-3 py-1 bg-gray-100 text-gray-700">
                         {skill}
                       </span>
@@ -291,9 +335,9 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Tools</h4>
+                  <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Libraries</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Git', 'Docker', 'AWS'].map((skill) => (
+                    {['pandas', 'NumPy', 'Matplotlib', 'SciKit Learn'].map((skill) => (
                       <span key={skill} className="text-sm px-3 py-1 bg-gray-100 text-gray-700">
                         {skill}
                       </span>
@@ -301,14 +345,28 @@ const Portfolio = () => {
                   </div>
                 </div>
               </div>
+              <div className="mt-6">
+                <h4 className="font-bold mb-3 text-sm tracking-wider uppercase text-gray-500">Certifications</h4>
+                <div className="flex flex-wrap gap-2">
+                  {['Cloud Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals (MS-900)'].map((cert) => (
+                    <span key={cert} className="text-sm px-3 py-1 bg-gray-100 text-gray-700">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Download Resume */}
             <div className="pt-8">
-              <button className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-300 text-sm tracking-wider inline-flex items-center gap-3">
+              <a 
+                href="/will_aug_25.pdf" 
+                download
+                className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-300 text-sm tracking-wider inline-flex items-center gap-3"
+              >
                 <FileText size={18} />
                 DOWNLOAD FULL RESUME
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -336,17 +394,17 @@ const Portfolio = () => {
 
               <div className="space-y-6">
                 <a 
-                  href="mailto:your.email@example.com" 
+                  href="mailto:willchriscox2@gmail.com" 
                   className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
                 >
                   <div className="w-12 h-12 bg-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
                     <Mail size={20} />
                   </div>
-                  <span>your.email@example.com</span>
+                  <span>willchriscox2@gmail.com</span>
                 </a>
 
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/wcox2" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
@@ -354,11 +412,11 @@ const Portfolio = () => {
                   <div className="w-12 h-12 bg-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
                     <Github size={20} />
                   </div>
-                  <span>github.com/yourusername</span>
+                  <span>github.com/wcox2</span>
                 </a>
 
                 <a 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="linkedin.com/in/william-cox-5a2b32185" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
@@ -366,7 +424,31 @@ const Portfolio = () => {
                   <div className="w-12 h-12 bg-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
                     <Linkedin size={20} />
                   </div>
-                  <span>linkedin.com/in/yourusername</span>
+                  <span>linkedin.com/in/william-cox-5a2b32185</span>
+                </a>
+
+                <a 
+                  href="x.com/cwidev" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
+                >
+                  <div className="w-12 h-12 bg-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                    <X size={20} />
+                  </div>
+                  <span>x.com/cwidev</span>
+                </a>
+
+                <a 
+                  href="instagram.com/wcox2" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-lg hover:translate-x-2 transition-transform duration-300 group"
+                >
+                  <div className="w-12 h-12 bg-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                    <Instagram size={20} />
+                  </div>
+                  <span>instagram.com/wcox2</span>
                 </a>
               </div>
             </div>
@@ -413,7 +495,7 @@ const Portfolio = () => {
       <footer className="bg-black text-white py-12 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400 text-sm tracking-wider">
-            © 2024 Your Name. All rights reserved. Portfolio in progress.
+            © 2024 William Cox. All rights reserved.
           </p>
         </div>
       </footer>
