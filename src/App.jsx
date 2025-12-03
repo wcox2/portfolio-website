@@ -54,27 +54,40 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: "Gridiron Analytics",
+      description: "Developed NFL statistics database and web application using Python, MySQL, and JavaScript to query 15+ years of play-by-play data with interactive player comparison visualizations",
+      tech: ["Python", "JavaScript", "MySQL", "HTML", "CSS", "NumPy", "Pandas", "Bootstrap"],
+      status: "Completed",
+      date: "Aug 2023 - Dec 2023",
+      video: "/recording.mov",
+      githubUrl: "https://github.com/wcox2/gridiron-analytics/tree/main"
+    },
+    {
+      id: 2,
       title: "Flick Finder",
       description: "Led a 4-person Scrum team as Product Owner and developer for a personalized movie recommendation web app. Designed and implemented a full-stack application integrating a content-based ML model with a responsive ReactJS frontend and Flask backend. Trained and deployed a recommendation engine on a dataset of 45,000 movies to deliver tailored suggestions to users.",
       tech: ["Python/Flask", "ReactJS", "MySQL", "Scikit-learn", "NumPy", "Pandas", "Bootstrap"],
       status: "Completed",
-      date: "Feb 2024 - May 2024"
+      date: "Feb 2024 - May 2024",
+      githubUrl: "https://github.com/trallen22/Flick-Finder" // Add your GitHub repo URL here
     },
     {
-      id: 2,
+      id: 3,
       title: "UFC Bout Predictor",
       description: "Engineered and evaluated multiple ML models (KNN, SVM, Random Forest) to predict UFC fight outcomes with over 70% accuracy. Scraped and preprocessed structured data from UFCstats.com to build a robust training dataset. Presented findings at the Verna Miller Case Symposium, demonstrating effective model interpretation and data storytelling.",
       tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Git"],
       status: "Completed",
-      date: "March 2023 - May 2023"
+      date: "March 2023 - May 2023",
+      githubUrl: "" // Add your GitHub repo URL here
     },
     {
-      id: 3,
+      id: 4,
       title: "Mind Madness",
       description: "Designed and implemented core gameplay mechanics including player movement, puzzle interactions, and physics-based challenges in Unity using C#. Developed a modular architecture using object-oriented programming to support reusable puzzle components and scalable level design.",
       tech: ["Unity", "C#", "Figma", "Git"],
       status: "Completed",
-      date: "March 2023 - May 2023"
+      date: "March 2023 - May 2023",
+      githubUrl: "https://github.com/wcox2/Mind-Madness" 
     }
   ];
 
@@ -207,6 +220,20 @@ const Portfolio = () => {
                   {project.description}
                 </p>
 
+                {project.video && (
+                  <div className="mb-6">
+                    <video 
+                      controls 
+                      className="w-full rounded-lg shadow-md"
+                      style={{ maxHeight: '400px' }}
+                    >
+                      <source src={project.video} type="video/quicktime" />
+                      <source src={project.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
+
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
@@ -220,14 +247,28 @@ const Portfolio = () => {
                   </div>
 
                   <div className="flex gap-4 pt-4">
-                    <button className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-gray-600 hover:text-black">
-                      <Code size={16} />
-                      <span>View Code</span>
-                    </button>
-                    <button className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-gray-600 hover:text-black">
-                      <ExternalLink size={16} />
-                      <span>Live Demo</span>
-                    </button>
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-gray-600 hover:text-black"
+                      >
+                        <Code size={16} />
+                        <span>View Code</span>
+                      </a>
+                    )}
+                    {project.demoUrl && (
+                      <a 
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-gray-600 hover:text-black"
+                      >
+                        <ExternalLink size={16} />
+                        <span>Live Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
 
