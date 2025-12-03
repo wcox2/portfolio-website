@@ -428,7 +428,7 @@ const Portfolio = () => {
             {/* Download Resume */}
             <div className="pt-8">
               <a 
-                href="/will_aug_25.pdf" 
+                href="/will_cox_resume.pdf" 
                 download
                 className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-300 text-sm tracking-wider inline-flex items-center gap-3"
               >
