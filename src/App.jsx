@@ -53,7 +53,14 @@ const Portfolio = () => {
 
   const projects = [
     {
-      id: 1,
+      title: "AI-Powered Job Application Tracker",
+      description: "Built end-to-end job application tracking system with AI email parsing using Claude Sonnet 4.5, Gmail API integration for automated email fetching, and Firebase backend for state-tracked storage. Features intelligent deduplication, status history tracking (Applied → Interview → Offer/Rejected), and structured data extraction using LangChain with Pydantic validation",
+      tech: ["Python", "Claude Sonnet 4.5", "LangChain", "Firebase/Firestore", "Gmail API", "Pydantic", "OAuth 2.0", "python-dotenv"],
+      status: "In Progress",
+      date: "Feb 2025",
+      githubUrl: "https://github.com/wcox2/job_agent"
+    },
+    {
       title: "Gridiron Analytics",
       description: "Developed NFL statistics database and web application using Python, MySQL, and JavaScript to query 15+ years of play-by-play data with interactive player comparison visualizations",
       tech: ["Python", "JavaScript", "MySQL", "HTML", "CSS", "NumPy", "Pandas", "Bootstrap"],
@@ -63,7 +70,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/wcox2/gridiron-analytics/tree/main"
     },
     {
-      id: 2,
+      id: 3,
       title: "Flick Finder",
       description: "Led a 4-person Scrum team as Product Owner and developer for a personalized movie recommendation web app. Designed and implemented a full-stack application integrating a content-based ML model with a responsive ReactJS frontend and Flask backend. Trained and deployed a recommendation engine on a dataset of 45,000 movies to deliver tailored suggestions to users.",
       tech: ["Python/Flask", "ReactJS", "MySQL", "Scikit-learn", "NumPy", "Pandas", "Bootstrap"],
@@ -72,7 +79,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/trallen22/Flick-Finder" // Add your GitHub repo URL here
     },
     {
-      id: 3,
+      id: 4,
       title: "UFC Bout Predictor",
       description: "Engineered and evaluated multiple ML models (KNN, SVM, Random Forest) to predict UFC fight outcomes with over 70% accuracy. Scraped and preprocessed structured data from UFCstats.com to build a robust training dataset. Presented findings at the Verna Miller Case Symposium, demonstrating effective model interpretation and data storytelling.",
       tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Git"],
@@ -81,7 +88,7 @@ const Portfolio = () => {
       githubUrl: "" // Add your GitHub repo URL here
     },
     {
-      id: 4,
+      id: 5,
       title: "Mind Madness",
       description: "Designed and implemented core gameplay mechanics including player movement, puzzle interactions, and physics-based challenges in Unity using C#. Developed a modular architecture using object-oriented programming to support reusable puzzle components and scalable level design.",
       tech: ["Unity", "C#", "Figma", "Git"],
